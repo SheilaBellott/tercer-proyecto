@@ -99,3 +99,15 @@
   width: 100%;
   margin: 0;
 }
+
+.button-cerrar{
+  position:absolute;
+  left: 240px;
+  bottom: 60px;
+  background-color: #ffffff;
+font-size: 16px;
+border: none;
+&:hover{
+  color: $color-principal;
+}
+}
