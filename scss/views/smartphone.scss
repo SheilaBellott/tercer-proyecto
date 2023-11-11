@@ -1,0 +1,158 @@
+main {
+  .hidden {
+    display: none;
+  }
+
+  .smartphone {
+    margin: 10px 8%;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .tarjeta {
+    color: $color-letras;
+    background-color: $color-fondo;
+
+    border-radius: 10px;
+    width: 95%;
+
+    margin: 10px 8%;
+    position: relative;
+    right: 5.5%;
+
+    .producto-img {
+      width: 40%;
+      margin: 10px 30%;
+    }
+    p {
+      font-size: 18px;
+      text-align: center;
+      margin: 2px;
+    }
+    h2 {
+      text-align: center;
+    }
+    .bottom-precio-comprar {
+      width: 100%;
+    }
+    .bottom-comprar {
+      background-color: #060605;
+      color: rgb(255, 255, 255);
+      font-size: 18px;
+      border-radius: 16px;
+
+      width: 90%;
+
+      margin-bottom: 10px;
+
+      position: relative;
+      left: 5%;
+
+      &:hover {
+        background-color: rgb(39, 38, 38);
+      }
+    }
+    .memorias {
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      margin: 6px;
+      button {
+        &:hover {
+          background-color: rgb(221, 219, 219);
+        }
+      }
+    }
+    .memorias button {
+      position: relative;
+      background-color: $color-fondo;
+
+      width: 100%;
+      right: 8px;
+      margin: 0 10px;
+      padding: 0px;
+      color: $color-letras;
+      font-size: 15px;
+      border-radius: 16px;
+      border-style: groove;
+    }
+    .descripcion p {
+      font-family: ProximaNova, Arial, Sans-serif;
+      text-align: left;
+      font-size: 0.8rem;
+      margin: 8px 15px;
+      color: #777;
+    }
+    .colores {
+      text-align: left;
+      margin: 0 15px;
+      margin-bottom: 15px;
+    }
+    p button {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 10px;
+    }
+    .negro {
+      background-color: #000000;
+      &:hover {
+        transform: scale(0.8);
+      }
+    }
+    .gris {
+      background-color: #464540;
+      &:hover {
+        transform: scale(0.8);
+      }
+    }
+    .blanco {
+      background-color: white;
+      &:hover {
+        transform: scale(0.8);
+      }
+    }
+    .blue {
+      background-color: blue;
+      &:hover {
+        transform: scale(0.8);
+      }
+    }
+  }
+  @media screen and (min-width: 750px) {
+    .bottom-comprar {
+      margin-top: 40px;
+    }
+    .tarjeta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      width: 65%;
+      margin: 10px 15%;
+      position: relative;
+      right: 0.5%;
+
+      .producto-img {
+        width: 190px;
+        margin: 12% 8%;
+      }
+
+      .descripcion-principal {
+        h2 {
+          text-align: left;
+        }
+        p {
+          text-align: left;
+          margin: 10px 0;
+        }
+        .memorias p {
+          text-align: center;
+        }
+        .colores {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
