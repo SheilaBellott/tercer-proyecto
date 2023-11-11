@@ -185,7 +185,6 @@ function mostrarProductosSeleccionadosEnVentanaEmergente() {
     });
   } else {
     productPopupContent.innerHTML = `<p class="cero-productos">No hay productos seleccionados</p>`;
-    productPopupContent.innerHTML += `<button class="button-cerrar">X</button>`;
   }
 
 
