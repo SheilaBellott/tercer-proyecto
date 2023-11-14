@@ -123,10 +123,11 @@ cartButton.addEventListener("click", () => {
     mostrarProductosSeleccionadosEnVentanaEmergente();
   } else {
     // Si no hay productos seleccionados, muestra el mensaje de "No hay productos seleccionados"
-    mensajeCarritoVacio.style.display = "block";
+    mostrarProductosSeleccionadosEnVentanaEmergente(
+      "no hay productos seleccionados"
+    );
   }
 });
-
 // Función para cerrar la ventana emergente
 productPopup.addEventListener("dblclick", () => {
   productPopup.style.display = "none";
@@ -158,7 +159,6 @@ botonesComprar.forEach((boton, index) => {
 });
 
 // ... (código existente)
-
 
 function mostrarProductosSeleccionadosEnVentanaEmergente() {
   const productPopupContent = document.querySelector(".product-popup-content");
@@ -208,7 +208,6 @@ function mostrarProductosSeleccionadosEnVentanaEmergente() {
   productPopup.style.display = "block";
 }
 
-
 function eliminarProductoSeleccionado(index) {
   // Obtener la lista de productos seleccionados del LocalStorage
   let productosSeleccionados =
@@ -223,8 +222,3 @@ function eliminarProductoSeleccionado(index) {
     JSON.stringify(productosSeleccionados)
   );
 }
-
-
-
-
-
