@@ -120,7 +120,7 @@ cartButton.addEventListener("click", () => {
 
   if (productosSeleccionados && productosSeleccionados.length > 0) {
     // Si hay productos seleccionados, muestra la ventana emergente
-    productPopup.style.display = "block";
+    mostrarProductosSeleccionadosEnVentanaEmergente();
   } else {
     // Si no hay productos seleccionados, muestra el mensaje de "No hay productos seleccionados"
     mensajeCarritoVacio.style.display = "block";
@@ -159,34 +159,34 @@ botonesComprar.forEach((boton, index) => {
 
 // ... (código existente)
 
+
 function mostrarProductosSeleccionadosEnVentanaEmergente() {
   const productPopupContent = document.querySelector(".product-popup-content");
-  productPopupContent.innerHTML = "";
+  productPopupContent.innerHTML = `<button id="cerrar-popup">X</button>`;
 
   // Obtener la lista de productos seleccionados del LocalStorage
   const productosSeleccionados = JSON.parse(
     localStorage.getItem("productosSeleccionados")
   );
-  productPopupContent.innerHTML += `<button id="cerrar-popup">X</button>`;
+
   if (productosSeleccionados && productosSeleccionados.length > 0) {
     productosSeleccionados.forEach((producto, index) => {
       productPopupContent.innerHTML += `
-                <div class="carrito-contenedor">
-                <img class="img-carrito" src="${producto.src}" alt="${producto.nombre}">
-                <h3 class="title-carrito">${producto.nombre}</h3>
-                <p class="carrito-p">Precio: ${producto.precio} USD</p>
-                
-                </div>
-                <div>
-                <button class="eliminar-producto" data-index="${index}">Eliminar</button>
-                <button class="comprar-producto">Finalizar compra</button>
-                </div>
-            `;
+        <div class="carrito-contenedor">
+          <img class="img-carrito" src="${producto.src}" alt="${producto.nombre}">
+          <h3 class="title-carrito">${producto.nombre}</h3>
+          <p class="carrito-p">Precio: ${producto.precio} USD</p>
+        </div>
+        <div>
+          <button class="eliminar-producto" data-index="${index}">Eliminar</button>
+          <button class="comprar-producto">Finalizar compra</button>
+        </div>
+      `;
     });
   } else {
-    productPopupContent.innerHTML = `<p class="cero-productos">No hay productos seleccionados</p>`;
+    // Si no hay productos seleccionados, muestra el mensaje de "No hay productos seleccionados"
+    productPopupContent.innerHTML += `<p class="cero-productos">No hay productos seleccionados</p>`;
   }
-
 
   // Agregar eventos para eliminar productos
   const botonEliminarProducto = document.querySelectorAll(".eliminar-producto");
@@ -208,6 +208,7 @@ function mostrarProductosSeleccionadosEnVentanaEmergente() {
   productPopup.style.display = "block";
 }
 
+
 function eliminarProductoSeleccionado(index) {
   // Obtener la lista de productos seleccionados del LocalStorage
   let productosSeleccionados =
@@ -222,3 +223,8 @@ function eliminarProductoSeleccionado(index) {
     JSON.stringify(productosSeleccionados)
   );
 }
+
+
+
+
+
