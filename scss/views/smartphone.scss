@@ -22,6 +22,10 @@ main {
     position: relative;
     right: 5.5%;
 
+    &:hover{
+      transform: scale(0.99);
+    }
+
     .producto-img {
       width: 40%;
       margin: 10px 30%;
@@ -97,27 +101,15 @@ main {
     }
     .negro {
       background-color: #000000;
-      &:hover {
-        transform: scale(0.8);
-      }
     }
     .gris {
       background-color: #464540;
-      &:hover {
-        transform: scale(0.8);
-      }
     }
     .blanco {
       background-color: white;
-      &:hover {
-        transform: scale(0.8);
-      }
     }
     .blue {
       background-color: blue;
-      &:hover {
-        transform: scale(0.8);
-      }
     }
   }
   @media screen and (min-width: 750px) {

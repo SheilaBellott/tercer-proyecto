@@ -131,6 +131,8 @@ main .tarjeta {
   margin: 10px 8%;
   position: relative;
   right: 5.5%; }
+  main .tarjeta:hover {
+    transform: scale(0.99); }
   main .tarjeta .producto-img {
     width: 40%;
     margin: 10px 30%; }
@@ -187,20 +189,12 @@ main .tarjeta {
     border-radius: 10px; }
   main .tarjeta .negro {
     background-color: #000000; }
-    main .tarjeta .negro:hover {
-      transform: scale(0.8); }
   main .tarjeta .gris {
     background-color: #464540; }
-    main .tarjeta .gris:hover {
-      transform: scale(0.8); }
   main .tarjeta .blanco {
     background-color: white; }
-    main .tarjeta .blanco:hover {
-      transform: scale(0.8); }
   main .tarjeta .blue {
     background-color: blue; }
-    main .tarjeta .blue:hover {
-      transform: scale(0.8); }
 
 @media screen and (min-width: 750px) {
   main .bottom-comprar {
