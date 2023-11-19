@@ -1,4 +1,7 @@
 main {
+  #target {
+    width: auto;
+  }
   .hidden {
     display: none;
   }
@@ -11,18 +14,17 @@ main {
     border-radius: 5px;
     text-align: center;
   }
+  #target {
+    width: 95%;
+    margin: auto;
+  }
   .tarjeta {
     color: $color-letras;
     background-color: $color-fondo;
-
     border-radius: 10px;
-    width: 95%;
+    margin: 10px;
 
-    margin: 10px 8%;
-    position: relative;
-    right: 5.5%;
-
-    &:hover{
+    &:hover {
       transform: scale(0.99);
     }
 
@@ -112,20 +114,18 @@ main {
       background-color: blue;
     }
   }
-  
+
   @media screen and (min-width: 820px) {
     .bottom-comprar {
       margin-top: 40px;
     }
+    #target {
+      width: 70%;
+      margin: 20px auto;
+    }
     .tarjeta {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-
-      width: 65%;
-      margin: 10px 15%;
-      position: relative;
-      right: 0.5%;
-
       .producto-img {
         width: 190px;
         margin: 6% auto;

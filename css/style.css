@@ -112,6 +112,9 @@ footer {
         footer .footer .footer-img {
           padding: 0 1rem; } }
 
+main #target {
+  width: auto; }
+
 main .hidden {
   display: none; }
 
@@ -123,14 +126,15 @@ main .smartphone {
   border-radius: 5px;
   text-align: center; }
 
+main #target {
+  width: 95%;
+  margin: auto; }
+
 main .tarjeta {
   color: black;
   background-color: whitesmoke;
   border-radius: 10px;
-  width: 95%;
-  margin: 10px 8%;
-  position: relative;
-  right: 5.5%; }
+  margin: 10px; }
   main .tarjeta:hover {
     transform: scale(0.99); }
   main .tarjeta .producto-img {
@@ -199,13 +203,12 @@ main .tarjeta {
 @media screen and (min-width: 820px) {
   main .bottom-comprar {
     margin-top: 40px; }
+  main #target {
+    width: 70%;
+    margin: 20px auto; }
   main .tarjeta {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 65%;
-    margin: 10px 15%;
-    position: relative;
-    right: 0.5%; }
+    grid-template-columns: repeat(3, 1fr); }
     main .tarjeta .producto-img {
       width: 190px;
       margin: 6% auto; }
