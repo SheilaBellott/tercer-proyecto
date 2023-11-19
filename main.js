@@ -49,9 +49,9 @@ function mostrarProductos(productosAMostrar) {
       const div = document.createElement("div");
       div.innerHTML = `
         <div class="tarjeta">
-          <div>
+          
             <img class="producto-img" src="${producto.src}" />
-          </div>
+          
           <div class="descripcion-principal">
             <h2>${producto.nombre}</h2>
             <div class="descripcion">
@@ -75,6 +75,8 @@ function mostrarProductos(productosAMostrar) {
         </div>
       `;
       target.appendChild(div);
+
+
 const botonesMemoria = div.querySelectorAll('.memorias button');
       botonesMemoria.forEach((memoriaBtn) => {
         memoriaBtn.addEventListener('click', () => {

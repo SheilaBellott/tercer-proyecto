@@ -112,7 +112,8 @@ main {
       background-color: blue;
     }
   }
-  @media screen and (min-width: 750px) {
+  
+  @media screen and (min-width: 820px) {
     .bottom-comprar {
       margin-top: 40px;
     }
@@ -127,10 +128,11 @@ main {
 
       .producto-img {
         width: 190px;
-        margin: 12% 8%;
+        margin: 6% auto;
       }
 
       .descripcion-principal {
+        padding-left: 10px;
         h2 {
           text-align: left;
         }

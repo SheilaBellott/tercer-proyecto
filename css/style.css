@@ -196,7 +196,7 @@ main .tarjeta {
   main .tarjeta .blue {
     background-color: blue; }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 820px) {
   main .bottom-comprar {
     margin-top: 40px; }
   main .tarjeta {
@@ -208,16 +208,18 @@ main .tarjeta {
     right: 0.5%; }
     main .tarjeta .producto-img {
       width: 190px;
-      margin: 12% 8%; }
-    main .tarjeta .descripcion-principal h2 {
-      text-align: left; }
-    main .tarjeta .descripcion-principal p {
-      text-align: left;
-      margin: 10px 0; }
-    main .tarjeta .descripcion-principal .memorias p {
-      text-align: center; }
-    main .tarjeta .descripcion-principal .colores {
-      margin-bottom: 20px; } }
+      margin: 6% auto; }
+    main .tarjeta .descripcion-principal {
+      padding-left: 10px; }
+      main .tarjeta .descripcion-principal h2 {
+        text-align: left; }
+      main .tarjeta .descripcion-principal p {
+        text-align: left;
+        margin: 10px 0; }
+      main .tarjeta .descripcion-principal .memorias p {
+        text-align: center; }
+      main .tarjeta .descripcion-principal .colores {
+        margin-bottom: 20px; } }
 
 .cart-button img {
   position: fixed;
