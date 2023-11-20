@@ -136,7 +136,7 @@ main .tarjeta {
   border-radius: 10px;
   margin: 10px; }
   main .tarjeta:hover {
-    transform: scale(0.99); }
+    transform: scale(0.998); }
   main .tarjeta .producto-img {
     width: 40%;
     margin: 10px 30%; }
@@ -148,24 +148,27 @@ main .tarjeta {
     text-align: center; }
   main .tarjeta .bottom-precio-comprar {
     width: 100%; }
-  main .tarjeta .bottom-comprar {
-    background-color: #060605;
-    color: white;
-    font-size: 18px;
-    border-radius: 16px;
-    width: 90%;
-    margin-bottom: 10px;
-    position: relative;
-    left: 5%; }
-    main .tarjeta .bottom-comprar:hover {
-      background-color: #272626; }
+    main .tarjeta .bottom-precio-comprar button {
+      background-color: #060605;
+      color: white;
+      font-size: 18px;
+      border-radius: 16px;
+      width: 90%;
+      margin-bottom: 10px;
+      position: relative;
+      left: 5%; }
+      main .tarjeta .bottom-precio-comprar button:hover {
+        background-color: #272626; }
   main .tarjeta .memorias {
     display: flex;
     flex-direction: row;
     padding: 0;
     margin: 6px; }
     main .tarjeta .memorias button:hover {
-      background-color: #dddbdb; }
+      background-color: #eeecec; }
+  main .tarjeta .memorias button.memoria-seleccionada {
+    border-color: #D20000;
+    background-color: #ececec; }
   main .tarjeta .memorias button {
     position: relative;
     background-color: whitesmoke;
@@ -201,8 +204,10 @@ main .tarjeta {
     background-color: blue; }
 
 @media screen and (min-width: 820px) {
-  main .bottom-comprar {
-    margin-top: 40px; }
+  main .bottom-precio-comprar p {
+    padding-top: 10px; }
+  main .bottom-precio-comprar button {
+    margin-top: 30px; }
   main #target {
     width: 70%;
     margin: 20px auto; }

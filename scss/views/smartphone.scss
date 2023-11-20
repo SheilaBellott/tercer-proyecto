@@ -25,7 +25,7 @@ main {
     margin: 10px;
 
     &:hover {
-      transform: scale(0.99);
+      transform: scale(0.998);
     }
 
     .producto-img {
@@ -42,22 +42,18 @@ main {
     }
     .bottom-precio-comprar {
       width: 100%;
-    }
-    .bottom-comprar {
-      background-color: #060605;
-      color: rgb(255, 255, 255);
-      font-size: 18px;
-      border-radius: 16px;
-
-      width: 90%;
-
-      margin-bottom: 10px;
-
-      position: relative;
-      left: 5%;
-
-      &:hover {
-        background-color: rgb(39, 38, 38);
+      button {
+        background-color: #060605;
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        border-radius: 16px;
+        width: 90%;
+        margin-bottom: 10px;
+        position: relative;
+        left: 5%;
+        &:hover {
+          background-color: rgb(39, 38, 38);
+        }
       }
     }
     .memorias {
@@ -67,10 +63,16 @@ main {
       margin: 6px;
       button {
         &:hover {
-          background-color: rgb(221, 219, 219);
+          background-color: #eeecec;
         }
       }
     }
+   
+.memorias button.memoria-seleccionada {
+   border-color:$color-principal;
+   background-color: #ececec;
+}
+
     .memorias button {
       position: relative;
       background-color: $color-fondo;
@@ -116,8 +118,13 @@ main {
   }
 
   @media screen and (min-width: 820px) {
-    .bottom-comprar {
-      margin-top: 40px;
+    .bottom-precio-comprar {
+      p{
+        padding-top: 10px;
+      }
+      button{
+      margin-top: 30px;
+      }
     }
     #target {
       width: 70%;

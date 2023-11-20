@@ -49,9 +49,7 @@ function mostrarProductos(productosAMostrar) {
       const div = document.createElement("div");
       div.innerHTML = `
         <div class="tarjeta">
-          
             <img class="producto-img" src="${producto.src}" />
-          
           <div class="descripcion-principal">
             <h2>${producto.nombre}</h2>
             <div class="descripcion">
@@ -78,18 +76,25 @@ function mostrarProductos(productosAMostrar) {
 
 
 const botonesMemoria = div.querySelectorAll('.memorias button');
-      botonesMemoria.forEach((memoriaBtn) => {
-        memoriaBtn.addEventListener('click', () => {
-          const capacidad = parseInt(memoriaBtn.textContent.replace('GB', ''));
-          const precioProducto = producto.precios[capacidad];
-          div.querySelector('.bottom-precio-comprar p').textContent = `Precio: ${precioProducto} USD`;
-          producto.memoria = capacidad;
-          producto.precio = precioProducto;
+botonesMemoria.forEach((memoriaBtn) => {
+  memoriaBtn.addEventListener('click', () => {
+    botonesMemoria.forEach((btn) => {
+      btn.classList.remove('memoria-seleccionada'); 
+    });
 
-          const botonComprar = div.querySelector('.bottom-comprar');
-          botonComprar.removeAttribute('disabled'); // Habilitar el botón después de seleccionar memoria
-        });
-      });
+    memoriaBtn.classList.add('memoria-seleccionada'); 
+
+    const capacidad = parseInt(memoriaBtn.textContent.replace('GB', ''));
+    const precioProducto = producto.precios[capacidad];
+    div.querySelector('.bottom-precio-comprar p').textContent = `Precio: ${precioProducto} USD`;
+    producto.memoria = capacidad;
+    producto.precio = precioProducto;
+
+    const botonComprar = div.querySelector('.bottom-comprar');
+    botonComprar.removeAttribute('disabled'); // Habilitar el botón después de seleccionar memoria
+  });
+});
+
 
       const botonComprar = div.querySelector('.bottom-comprar');
       botonComprar.setAttribute('disabled', 'true'); // Deshabilitar el botón al inicio
