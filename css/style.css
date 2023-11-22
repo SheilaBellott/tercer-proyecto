@@ -6,7 +6,7 @@
 header {
   font-size: 1.1rem; }
   header .btn-outline-success {
-    color: #D20000;
+    color: #d20000;
     --bs-btn-hover-bg: #cb0001;
     --bs-btn-border-color: #cb0001;
     --bs-btn-active-bg: #a51111;
@@ -36,7 +36,7 @@ header {
       header nav .menu-center ul li a {
         padding: 1px; }
       header nav .menu-center ul li a:hover {
-        color: #D20000; }
+        color: #d20000; }
       header nav .menu-center ul li a:active {
         color: #c67070; }
   @media screen and (min-width: 992px) {
@@ -69,7 +69,7 @@ footer {
     border-top: 1px solid #797367;
     margin: 0; }
     footer .copy span {
-      color: #D20000; }
+      color: #d20000; }
   footer .footer-img {
     display: flex;
     flex-direction: column;
@@ -81,7 +81,7 @@ footer {
     padding: 0; }
     footer ul li {
       list-style-type: none;
-      color: #D20000; }
+      color: #d20000; }
   footer a {
     text-decoration: none;
     padding: 0;
@@ -167,7 +167,7 @@ main .tarjeta {
     main .tarjeta .memorias button:hover {
       background-color: #eeecec; }
   main .tarjeta .memorias button.memoria-seleccionada {
-    border-color: #D20000;
+    border-color: #d20000;
     background-color: #ececec; }
   main .tarjeta .memorias button {
     position: relative;
@@ -281,7 +281,7 @@ main .tarjeta {
   left: 100%;
   bottom: 19px; }
   #cerrar-popup:hover {
-    color: #D20000; }
+    color: #d20000; }
 
 .carrito-contenedor {
   display: flex;
@@ -304,7 +304,7 @@ main .tarjeta {
   margin: 2px; }
 
 .comprar-producto {
-  background-color: #D20000;
+  background-color: #d20000;
   padding: 4px;
   border: 1px solid black;
   margin: 2px;
@@ -314,6 +314,19 @@ main .tarjeta {
 .cero-productos {
   width: 100%;
   margin: 0; }
+
+div:where(.swal2-container) div:where(.swal2-popup) {
+  width: 200px !important;
+  font-size: 10px !important; }
+
+div:where(.swal2-icon).swal2-success .swal2-success-ring {
+  border: 0.25em solid #d9b9b9 !important; }
+
+div:where(.swal2-icon).swal2-success {
+  border-color: #d20000 !important; }
+
+div:where(.swal2-icon).swal2-success [class^=swal2-success-line] {
+  background-color: #d20000 !important; }
 
 body {
   background-color: whitesmoke;

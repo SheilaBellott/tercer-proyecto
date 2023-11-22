@@ -67,11 +67,11 @@ main {
         }
       }
     }
-   
-.memorias button.memoria-seleccionada {
-   border-color:$color-principal;
-   background-color: #ececec;
-}
+
+    .memorias button.memoria-seleccionada {
+      border-color: $color-principal;
+      background-color: #ececec;
+    }
 
     .memorias button {
       position: relative;
@@ -119,11 +119,11 @@ main {
 
   @media screen and (min-width: 820px) {
     .bottom-precio-comprar {
-      p{
+      p {
         padding-top: 10px;
       }
-      button{
-      margin-top: 30px;
+      button {
+        margin-top: 30px;
       }
     }
     #target {

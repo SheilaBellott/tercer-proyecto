@@ -1,9 +1,10 @@
+
 const productos = [
   {
     nombre: "iphone 11",
     precios: {
       64: 1000,
-      128: 1100
+      128: 1100,
     },
     src: "../iphone-img/1540-1.png",
     parrafo:
@@ -13,7 +14,7 @@ const productos = [
     nombre: "samsung s23",
     precios: {
       64: 700,
-      128: 750
+      128: 750,
     },
     src: "../iphone-img/1540-1.png",
     parrafo:
@@ -23,7 +24,7 @@ const productos = [
     nombre: "xiaomi poco x5",
     precios: {
       64: 300,
-      128: 350
+      128: 350,
     },
     src: "../iphone-img/1540-1.png",
     parrafo:
@@ -74,44 +75,55 @@ function mostrarProductos(productosAMostrar) {
       `;
       target.appendChild(div);
 
-
-const botonesMemoria = div.querySelectorAll('.memorias button');
-botonesMemoria.forEach((memoriaBtn) => {
-  memoriaBtn.addEventListener('click', () => {
-    botonesMemoria.forEach((btn) => {
-      btn.classList.remove('memoria-seleccionada'); 
-    });
-
-    memoriaBtn.classList.add('memoria-seleccionada'); 
-
-    const capacidad = parseInt(memoriaBtn.textContent.replace('GB', ''));
-    const precioProducto = producto.precios[capacidad];
-    div.querySelector('.bottom-precio-comprar p').textContent = `Precio: ${precioProducto} USD`;
-    producto.memoria = capacidad;
-    producto.precio = precioProducto;
-
-    const botonComprar = div.querySelector('.bottom-comprar');
-    botonComprar.removeAttribute('disabled'); // Habilitar el botón después de seleccionar memoria
-  });
-});
-
-
-      const botonComprar = div.querySelector('.bottom-comprar');
-      botonComprar.setAttribute('disabled', 'true'); // Deshabilitar el botón al inicio
-
-      botonComprar.addEventListener('click', () => {
-        const productosSeleccionados = JSON.parse(localStorage.getItem("productosSeleccionados")) || [];
-        if (producto.memoria) {
-          productosSeleccionados.push({
-            nombre: producto.nombre,
-            src: producto.src,
-            memoria: producto.memoria,
-            precio: producto.precio
+      const botonesMemoria = div.querySelectorAll(".memorias button");
+      botonesMemoria.forEach((memoriaBtn) => {
+        memoriaBtn.addEventListener("click", () => {
+          botonesMemoria.forEach((btn) => {
+            btn.classList.remove("memoria-seleccionada");
           });
-          localStorage.setItem("productosSeleccionados", JSON.stringify(productosSeleccionados));
-          mostrarProductosSeleccionadosEnVentanaEmergente();
-        } else {
-          alert('Por favor, selecciona una memoria antes de agregar al carrito.');
+
+          memoriaBtn.classList.add("memoria-seleccionada");
+
+          const capacidad = parseInt(memoriaBtn.textContent.replace("GB", ""));
+          const precioProducto = producto.precios[capacidad];
+          div.querySelector(
+            ".bottom-precio-comprar p"
+          ).textContent = `Precio: ${precioProducto} USD`;
+          producto.memoria = capacidad;
+          producto.precio = precioProducto;
+
+          const botonComprar = div.querySelector(".bottom-comprar");
+          botonComprar.removeAttribute("disabled"); // Habilitar el botón después de seleccionar memoria
+        });
+      });
+
+      const botonComprar = div.querySelector(".bottom-comprar");
+      botonComprar.setAttribute("disabled", "true"); // Deshabilitar el botón al inicio
+
+      botonComprar.addEventListener("click", () => {
+        const productosSeleccionados =
+          JSON.parse(localStorage.getItem("productosSeleccionados")) || [];
+        if (producto.memoria) {
+          if (productosSeleccionados.length < 3) {
+            productosSeleccionados.push({
+              nombre: producto.nombre,
+              src: producto.src,
+              memoria: producto.memoria,
+              precio: producto.precio,
+            });
+
+            localStorage.setItem(
+              "productosSeleccionados",
+              JSON.stringify(productosSeleccionados)
+            );
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Producto añadido",
+              showConfirmButton: false,
+              timer: 1500
+            });
+          }
         }
       });
     });
@@ -134,19 +146,26 @@ cartButton.addEventListener("click", () => {
 
 function mostrarProductosSeleccionadosEnVentanaEmergente() {
   productPopupContent.innerHTML = `<button id="cerrar-popup">X</button>`;
-  const productosSeleccionados = JSON.parse(localStorage.getItem("productosSeleccionados"));
+  const productosSeleccionados = JSON.parse(
+    localStorage.getItem("productosSeleccionados")
+  );
 
   if (productosSeleccionados && productosSeleccionados.length > 0) {
-    productPopupContent.innerHTML += productosSeleccionados.map((producto) => `
+    productPopupContent.innerHTML += productosSeleccionados
+      .map(
+        (producto) => `
       <div class="carrito-contenedor">
         <img class="img-carrito" src="${producto.src}" alt="${producto.nombre}">
         <h3 class="title-carrito">${producto.nombre}</h3>
         <p class="carrito-p">Memoria: ${producto.memoria}GB</p>
         <p class="carrito-p">Precio: ${producto.precio} USD</p>
-        <button class="eliminar-producto">Eliminar</button>
         <button class="comprar-producto">Finalizar compra</button>
+        <button class="eliminar-producto">Eliminar</button>
+        
       </div>
-    `).join('');
+    `
+      )
+      .join("");
   } else {
     productPopupContent.innerHTML += `<p class="cero-productos">No hay productos seleccionados</p>`;
   }
@@ -156,9 +175,9 @@ function mostrarProductosSeleccionadosEnVentanaEmergente() {
     productPopup.style.display = "none";
   });
 
-  const botonesEliminar = document.querySelectorAll('.eliminar-producto');
+  const botonesEliminar = document.querySelectorAll(".eliminar-producto");
   botonesEliminar.forEach((boton, index) => {
-    boton.addEventListener('click', () => {
+    boton.addEventListener("click", () => {
       eliminarProductoSeleccionado(index);
       mostrarProductosSeleccionadosEnVentanaEmergente();
     });
@@ -168,15 +187,14 @@ function mostrarProductosSeleccionadosEnVentanaEmergente() {
 }
 
 function eliminarProductoSeleccionado(index) {
-  let productosSeleccionados = JSON.parse(localStorage.getItem("productosSeleccionados")) || [];
+  let productosSeleccionados =
+    JSON.parse(localStorage.getItem("productosSeleccionados")) || [];
   productosSeleccionados.splice(index, 1);
-  localStorage.setItem("productosSeleccionados", JSON.stringify(productosSeleccionados));
+  localStorage.setItem(
+    "productosSeleccionados",
+    JSON.stringify(productosSeleccionados)
+  );
 }
 
 // Mostrar todos los productos al cargar la página
 mostrarProductos(productos);
-
-
- 
-
-
