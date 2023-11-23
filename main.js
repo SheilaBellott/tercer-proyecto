@@ -1,36 +1,35 @@
-
-const productos = [
-  {
-    nombre: "iphone 11",
-    precios: {
-      64: 1000,
-      128: 1100,
-    },
-    src: "../iphone-img/1540-1.png",
-    parrafo:
-      "¡La undécima edición del teléfono inteligente Redmi más popular  Cámara inteligente de 50 MP, procesador Snapdragon® 680 súper rápido, pantalla AMOLED con frecuencia de actualización de 90 Hz: todo esto y mucho más en una carcasa moderna.",
-  },
-  {
-    nombre: "samsung s23",
-    precios: {
-      64: 700,
-      128: 750,
-    },
-    src: "../iphone-img/1540-1.png",
-    parrafo:
-      "¡La undécima edición del teléfono inteligente Redmi más popular  Cámara inteligente de 50 MP, procesador Snapdragon® 680 súper rápido, pantalla AMOLED con frecuencia de actualización de 90 Hz: todo esto y mucho más en una carcasa moderna.",
-  },
-  {
-    nombre: "xiaomi poco x5",
-    precios: {
-      64: 300,
-      128: 350,
-    },
-    src: "../iphone-img/1540-1.png",
-    parrafo:
-      "¡La undécima edición del teléfono inteligente Redmi más popular  Cámara inteligente de 50 MP, procesador Snapdragon® 680 súper rápido, pantalla AMOLED con frecuencia de actualización de 90 Hz: todo esto y mucho más en una carcasa moderna.",
-  },
-];
+// const productos = [
+  // {
+    // nombre: "iphone 11",
+    // precios: {
+      // 64: 1000,
+      // 128: 1100,
+    // },
+    // src: "../iphone-img/1540-1.png",
+    // parrafo:
+      // // // "¡La undécima edición del teléfono inteligente Redmi más popular  Cámara inteligente de 50 MP, procesador Snapdragon® 680 súper rápido, pantalla AMOLED con frecuencia de actualización de 90 Hz: todo esto y mucho más en una carcasa moderna.",
+  // },
+  // {
+    // nombre: "samsung s23",
+    // precios: {
+      // 64: 700,
+      // 128: 750,
+    // },
+    // src: "../iphone-img/1540-1.png",
+    // parrafo:
+      // // // "¡La undécima edición del teléfono inteligente Redmi más popular  Cámara inteligente de 50 MP, procesador Snapdragon® 680 súper rápido, pantalla AMOLED con frecuencia de actualización de 90 Hz: todo esto y mucho más en una carcasa moderna.",
+  // },
+  // {
+    // nombre: "xiaomi poco x5",
+    // precios: {
+      // 64: 300,
+      // 128: 350,
+    // },
+    // src: "../iphone-img/1540-1.png",
+    // parrafo:
+      // // // "¡La undécima edición del teléfono inteligente Redmi más popular  Cámara inteligente de 50 MP, procesador Snapdragon® 680 súper rápido, pantalla AMOLED con frecuencia de actualización de 90 Hz: todo esto y mucho más en una carcasa moderna.",
+  // },
+// ];
 
 const form = document.getElementById("formJs");
 const nombreProductoInput = document.getElementById("nombreProducto");
@@ -38,7 +37,16 @@ const target = document.getElementById("target");
 const productPopup = document.querySelector(".product-popup");
 const productPopupContent = document.querySelector(".product-popup-content");
 const cartButton = document.getElementById("cart-button");
-const mensajeCarritoVacio = document.getElementById("mensajeCarritoVacio");
+
+async function pedirDatos() {
+  try {
+    const response = await fetch("productos.json");
+    const productos = await response.json();
+    mostrarProductos(productos);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 function mostrarProductos(productosAMostrar) {
   target.innerHTML = "";
@@ -121,7 +129,7 @@ function mostrarProductos(productosAMostrar) {
               icon: "success",
               title: "Producto añadido",
               showConfirmButton: false,
-              timer: 1500
+              timer: 1500,
             });
           }
         }
@@ -196,5 +204,5 @@ function eliminarProductoSeleccionado(index) {
   );
 }
 
-// Mostrar todos los productos al cargar la página
-mostrarProductos(productos);
+
+pedirDatos();
