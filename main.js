@@ -40,7 +40,7 @@ const cartButton = document.getElementById("cart-button");
 
 async function pedirDatos() {
   try {
-    const response = await fetch("productos.json");
+    const response = await fetch("../productos.json");
     const productos = await response.json();
     mostrarProductos(productos);
   } catch (error) {
