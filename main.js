@@ -1,64 +1,62 @@
-// const productos = [
-  // {
-    // nombre: "iphone 11",
-    // precios: {
-      // 64: 1000,
-      // 128: 1100,
-    // },
-    // src: "../iphone-img/1540-1.png",
-    // parrafo:
-      // // // "¡La undécima edición del teléfono inteligente Redmi más popular  Cámara inteligente de 50 MP, procesador Snapdragon® 680 súper rápido, pantalla AMOLED con frecuencia de actualización de 90 Hz: todo esto y mucho más en una carcasa moderna.",
-  // },
-  // {
-    // nombre: "samsung s23",
-    // precios: {
-      // 64: 700,
-      // 128: 750,
-    // },
-    // src: "../iphone-img/1540-1.png",
-    // parrafo:
-      // // // "¡La undécima edición del teléfono inteligente Redmi más popular  Cámara inteligente de 50 MP, procesador Snapdragon® 680 súper rápido, pantalla AMOLED con frecuencia de actualización de 90 Hz: todo esto y mucho más en una carcasa moderna.",
-  // },
-  // {
-    // nombre: "xiaomi poco x5",
-    // precios: {
-      // 64: 300,
-      // 128: 350,
-    // },
-    // src: "../iphone-img/1540-1.png",
-    // parrafo:
-      // // // "¡La undécima edición del teléfono inteligente Redmi más popular  Cámara inteligente de 50 MP, procesador Snapdragon® 680 súper rápido, pantalla AMOLED con frecuencia de actualización de 90 Hz: todo esto y mucho más en una carcasa moderna.",
-  // },
-// ];
+
 
 const form = document.getElementById("formJs");
 const nombreProductoInput = document.getElementById("nombreProducto");
-const target = document.getElementById("target");
+
 const productPopup = document.querySelector(".product-popup");
 const productPopupContent = document.querySelector(".product-popup-content");
 const cartButton = document.getElementById("cart-button");
 
-async function pedirDatos() {
+
+
+
+let productos = []; 
+
+
+async function cargarProductos() {
   try {
-    const response = await fetch("../productos.json");
-    const productos = await response.json();
-    mostrarProductos(productos);
+    const response = await fetch('../productos.json');
+    const categorias = await response.json();
+
+    const divsCategorias = document.querySelectorAll('.categoria');
+
+    divsCategorias.forEach(async (divCategoria) => {
+      const categoria = divCategoria.dataset.categoria;
+      const categoriaEncontrada = categorias.find(item => item.categoria === categoria);
+
+      if (categoriaEncontrada) {
+        const productosMostrados = categoriaEncontrada.productos;
+        mostrarProductos(productosMostrados, divCategoria); // Enviamos el div como parámetro
+      } else {
+        divCategoria.innerHTML = `<p>No se encontraron productos en la categoría ${categoria}</p>`;
+      }
+    });
   } catch (error) {
-    console.log(error);
+    console.error('Error al cargar los productos:', error);
   }
 }
 
-function mostrarProductos(productosAMostrar) {
-  target.innerHTML = "";
 
+function mostrarProductosPorCategoria(categoria, divId) {
+  const productosCategoria = productos.find(item => item.categoria === categoria);
+
+  if (productosCategoria) {
+    const productosMostrados = productosCategoria.productos;
+    mostrarProductos(productosMostrados, divId);
+  } else {
+    document.getElementById(divId).innerHTML = '<p>No se encontraron productos en esta categoría</p>';
+  }
+}
+
+function mostrarProductos(productosAMostrar, div) {
   if (productosAMostrar.length === 0) {
-    target.textContent = "Producto no encontrado";
+    div.innerHTML = "Producto no encontrado";
   } else {
     productosAMostrar.forEach((producto) => {
-      const div = document.createElement("div");
-      div.innerHTML = `
+      const productoElement = document.createElement("div");
+      productoElement.innerHTML = `
         <div class="tarjeta">
-            <img class="producto-img" src="${producto.src}" />
+          <img class="producto-img" src="${producto.src}" />
           <div class="descripcion-principal">
             <h2>${producto.nombre}</h2>
             <div class="descripcion">
@@ -71,8 +69,8 @@ function mostrarProductos(productosAMostrar) {
               <button class="blue"></button>
             </p>
             <div class="memorias">
-              <button class="memoria-btn">64GB</button>
-              <button class="memoria-btn">128GB</button>
+              <button class="memoria-btn" data-capacidad="64">64GB</button>
+              <button class="memoria-btn" data-capacidad="128">128GB</button>
             </div>
           </div>
           <div class="bottom-precio-comprar">
@@ -81,9 +79,11 @@ function mostrarProductos(productosAMostrar) {
           </div>
         </div>
       `;
-      target.appendChild(div);
+      div.appendChild(productoElement);
 
-      const botonesMemoria = div.querySelectorAll(".memorias button");
+      const botonesMemoria = productoElement.querySelectorAll(".memorias .memoria-btn");
+      const precioMostrado = productoElement.querySelector(".bottom-precio-comprar p");
+
       botonesMemoria.forEach((memoriaBtn) => {
         memoriaBtn.addEventListener("click", () => {
           botonesMemoria.forEach((btn) => {
@@ -92,20 +92,20 @@ function mostrarProductos(productosAMostrar) {
 
           memoriaBtn.classList.add("memoria-seleccionada");
 
-          const capacidad = parseInt(memoriaBtn.textContent.replace("GB", ""));
+          const capacidad = parseInt(memoriaBtn.getAttribute("data-capacidad"));
           const precioProducto = producto.precios[capacidad];
-          div.querySelector(
-            ".bottom-precio-comprar p"
-          ).textContent = `Precio: ${precioProducto} USD`;
+
+          precioMostrado.textContent = `Precio: ${precioProducto} USD`;
+
           producto.memoria = capacidad;
           producto.precio = precioProducto;
 
-          const botonComprar = div.querySelector(".bottom-comprar");
+          const botonComprar = productoElement.querySelector(".bottom-comprar");
           botonComprar.removeAttribute("disabled"); // Habilitar el botón después de seleccionar memoria
         });
       });
 
-      const botonComprar = div.querySelector(".bottom-comprar");
+      const botonComprar = productoElement.querySelector(".bottom-comprar");
       botonComprar.setAttribute("disabled", "true"); // Deshabilitar el botón al inicio
 
       botonComprar.addEventListener("click", () => {
@@ -138,15 +138,45 @@ function mostrarProductos(productosAMostrar) {
   }
 }
 
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   const nombre = nombreProductoInput.value.toLowerCase();
-  const productosFiltrados = productos.filter((item) =>
-    item.nombre.toLowerCase().includes(nombre)
-  );
+  const productosFiltrados = productos.reduce((result, categoria) => {
+    const productosCategoria = categoria.productos.filter((item) =>
+      item.nombre.toLowerCase().includes(nombre)
+    );
+    if (productosCategoria.length > 0) {
+      result.push(...productosCategoria);
+    }
+    return result;
+  }, []);
 
-  mostrarProductos(productosFiltrados);
+  if (productosFiltrados.length === 0 && nombre.length > 0) {
+    // Si no se encontraron productos pero se ingresó un término de búsqueda, buscar coincidencias parciales
+    const productosCoincidentes = productos.reduce((result, categoria) => {
+      const productosCategoria = categoria.productos.filter((item) =>
+        item.nombre.toLowerCase().includes(nombre[0])
+      );
+      if (productosCategoria.length > 0) {
+        result.push(...productosCategoria);
+      }
+      return result;
+    }, []);
+
+    mostrarProductos(productosCoincidentes);
+  } else {
+    mostrarProductos(productosFiltrados);
+  }
 });
+
+
+
+
+
+
+
+
 
 cartButton.addEventListener("click", () => {
   mostrarProductosSeleccionadosEnVentanaEmergente();
@@ -203,6 +233,8 @@ function eliminarProductoSeleccionado(index) {
     JSON.stringify(productosSeleccionados)
   );
 }
+//apartir de aca anda bienponele ds
 
 
-pedirDatos();
+cargarProductos();
+//apartir de aca muestran dos

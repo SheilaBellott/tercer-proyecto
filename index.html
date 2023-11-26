@@ -22,10 +22,10 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-pink">
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="brand" href="index.html">
-            <img src="iconos/logo-menu.png" alt="logo" />
+          <a class="brand" href="../index.html">
+            <img src="../iconos/logo-menu.png" alt="logo" />
           </a>
           <button
             class="navbar-toggler"
@@ -39,34 +39,63 @@
             <span class="navbar-toggler-icon color-icon"></span>
           </button>
           <div
-            class="collapse navbar-collapse menu-center clase "
+            class="collapse navbar-collapse menu-center clase"
             id="navbarNav"
           >
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" id="color" href="index.html">Inicio</a>
+                <a class="nav-link" id="color" href="../index.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/iphone.html">Iphone</a>
+                <a class="nav-link"  id="botonIphone" href="pages/iphone.html" >Iphone</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/xiaomi.html">Xiaomi</a>
+                <a class="nav-link" id="botonXiaomi" href="pages/xiaomi.html" >Xiaomi</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/samsung.html">Samsung</a>
+                <a class="nav-link" id="botonSamsung"  href="pages/samsung.html">Samsung</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/clientes.html">Clientes</a>
+                <a class="nav-link" href="../pages/clientes.html">Clientes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/contacto.html">Contacto</a>
+                <a class="nav-link" href="../pages/contacto.html">Contacto</a>
               </li>
             </ul>
+            <form id="formJs" class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="text"
+                placeholder="Nombre del producto"
+                id="nombreProducto"
+                aria-label="Nombre del producto"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Buscar
+              </button>
+            </form>
           </div>
         </div>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <br />
+      <div id="target"></div>
+      <br />
+    </main>
+    <div class="cart-button">
+      <img
+        src="../iconos/pngwing.com.png"
+        alt="Carrito de compras"
+        id="cart-button"
+      />
+    </div>
+    <div class="product-popup">
+      <div class="product-popup-content"></div>
+    </div>
+
+
+
     <footer>
       <div class="footer">
         <div class="nav-pago">

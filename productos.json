@@ -1,22 +1,72 @@
 [
     {
-    "nombre": "iphone 11",
-    "precios": {
-      "64": 1000,
-      "128": 1100
+      "categoria": "iphone",
+      "productos": [
+        {
+          "nombre": "iPhone 11",
+          "precios": {
+            "64": 1000,
+            "128": 1100
+          },
+          "src": "../iphone-img/1540-1.png",
+          "parrafo": "Descripción del iPhone 11"
+        },
+        {
+          "nombre": "iPhone 12",
+          "precios": {
+            "64": 1200,
+            "128": 1300
+          },
+          "src": "../iphone-img/1540-1.png",
+          "parrafo": "Descripción del iPhone 12"
+        }
+      ]
     },
-   "src": "../iphone-img/1540-1.png",
-    "parrafo":
-      "¡La undécima edición del teléfono inteligente Redmi más popular  Cámara inteligente de 50 MP, procesador Snapdragon® 680 súper rápido, pantalla AMOLED con frecuencia de actualización de 90 Hz: todo esto y mucho más en una carcasa moderna."
-},
-{
-    "nombre": "iphone 11",
-    "precios": {
-      "64": 1000,
-      "128": 1100
+    {
+      "categoria": "samsung",
+      "productos": [
+        {
+          "nombre": "Samsung Galaxy S20",
+          "precios": {
+            "64": 900,
+            "128": 1000
+          },
+          "src": "../iphone-img/1540-1.png",
+          "parrafo": "Descripción del Samsung Galaxy S20"
+        },
+        {
+          "nombre": "Samsung Galaxy Note 20",
+          "precios": {
+            "64": 1100,
+            "128": 1200
+          },
+          "src": "../iphone-img/1540-1.png",
+          "parrafo": "Descripción del Samsung Galaxy Note 20"
+        }
+      ]
     },
-   "src": "../iphone-img/1540-1.png",
-    "parrafo":
-      "¡La undécima edición del teléfono inteligente Redmi más popular  Cámara inteligente de 50 MP, procesador Snapdragon® 680 súper rápido, pantalla AMOLED con frecuencia de actualización de 90 Hz: todo esto y mucho más en una carcasa moderna."
-}
-]
+    {
+      "categoria": "xiaomi",
+      "productos": [
+        {
+          "nombre": "Xiaomi Mi 10",
+          "precios": {
+            "64": 800,
+            "128": 900
+          },
+          "src": "../iphone-img/1540-1.png",
+          "parrafo": "Descripción del Xiaomi Mi 10"
+        },
+        {
+          "nombre": "Xiaomi Redmi Note 9",
+          "precios": {
+            "64": 500,
+            "128": 600
+          },
+          "src": "../iphone-img/1540-1.png",
+          "parrafo": "Descripción del Xiaomi Redmi Note 9"
+        }
+      ]
+    }
+  ]
+  
