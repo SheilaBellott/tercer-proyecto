@@ -1,17 +1,10 @@
-
-
 const form = document.getElementById("formJs");
 const nombreProductoInput = document.getElementById("nombreProducto");
-
 const productPopup = document.querySelector(".product-popup");
 const productPopupContent = document.querySelector(".product-popup-content");
 const cartButton = document.getElementById("cart-button");
 
-
-
-
 let productos = []; 
-
 
 async function cargarProductos() {
   try {
@@ -26,7 +19,7 @@ async function cargarProductos() {
 
       if (categoriaEncontrada) {
         const productosMostrados = categoriaEncontrada.productos;
-        mostrarProductos(productosMostrados, divCategoria); // Enviamos el div como parámetro
+        mostrarProductos(productosMostrados, divCategoria); 
       } else {
         divCategoria.innerHTML = `<p>No se encontraron productos en la categoría ${categoria}</p>`;
       }
@@ -138,25 +131,23 @@ function mostrarProductos(productosAMostrar, div) {
   }
 }
 
-
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", async function (e) {
   e.preventDefault();
   const nombre = nombreProductoInput.value.toLowerCase();
-  const productosFiltrados = productos.reduce((result, categoria) => {
-    const productosCategoria = categoria.productos.filter((item) =>
-      item.nombre.toLowerCase().includes(nombre)
-    );
-    if (productosCategoria.length > 0) {
-      result.push(...productosCategoria);
-    }
-    return result;
-  }, []);
 
-  if (productosFiltrados.length === 0 && nombre.length > 0) {
-    // Si no se encontraron productos pero se ingresó un término de búsqueda, buscar coincidencias parciales
-    const productosCoincidentes = productos.reduce((result, categoria) => {
+  
+  const contenedorResultados = document.getElementById('target');
+
+
+  contenedorResultados.innerHTML = '';
+
+  try {
+    const response = await fetch('../productos.json');
+    const categorias = await response.json();
+
+    const productosFiltrados = categorias.reduce((result, categoria) => {
       const productosCategoria = categoria.productos.filter((item) =>
-        item.nombre.toLowerCase().includes(nombre[0])
+        item.nombre.toLowerCase().includes(nombre)
       );
       if (productosCategoria.length > 0) {
         result.push(...productosCategoria);
@@ -164,9 +155,26 @@ form.addEventListener("submit", function (e) {
       return result;
     }, []);
 
-    mostrarProductos(productosCoincidentes);
-  } else {
-    mostrarProductos(productosFiltrados);
+    if (productosFiltrados.length === 0 && nombre.length > 0) {
+      // Si no se encontraron productos pero se ingresó un término de búsqueda, buscar coincidencias 
+      const productosCoincidentes = categorias.reduce((result, categoria) => {
+        const productosCategoria = categoria.productos.filter((item) =>
+          item.nombre.toLowerCase().includes(nombre[0])
+        );
+        if (productosCategoria.length > 0) {
+          result.push(...productosCategoria);
+        }
+        return result;
+      }, []);
+
+      // Mostrar productos coincidentes en el contenedor actualizado
+      mostrarProductos(productosCoincidentes, contenedorResultados);
+    } else {
+      // Mostrar productos filtrados en el contenedor actualizado
+      mostrarProductos(productosFiltrados, contenedorResultados);
+    }
+  } catch (error) {
+    console.error('Error al cargar los productos:', error);
   }
 });
 
@@ -233,8 +241,6 @@ function eliminarProductoSeleccionado(index) {
     JSON.stringify(productosSeleccionados)
   );
 }
-//apartir de aca anda bienponele ds
 
 
 cargarProductos();
-//apartir de aca muestran dos
