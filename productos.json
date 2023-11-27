@@ -57,7 +57,7 @@
         "categoria": "xiaomi",
         "productos": [
           {
-            "nombre": "Xiaomi Poco",
+            "nombre": "Xiaomi Redmi 9",
             "precios": {
               "64": 800,
               "128": 900
@@ -66,7 +66,7 @@
             "parrafo": "El Xiaomi Poco es un smartphone Android con una pantalla AMOLED de 6.67 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciado por un procesador Snapdragon 778G, el Poco X5 Pro cuenta con hasta 8GB de RAM y hasta 256GB de almacenamiento interno expandible."
           },
           {
-            "nombre": "Xiaomi Poco",
+            "nombre": "Xiaomi Note 10",
             "precios": {
               "64": 800,
               "128": 900
@@ -75,7 +75,7 @@
             "parrafo": "El Xiaomi Poco X5 Pro 5G es un smartphone Android con una pantalla AMOLED de 6.67 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciado por un procesador Snapdragon 778G, el Poco X5 Pro cuenta con hasta 8GB de RAM y hasta 256GB de almacenamiento interno expandible."
           },
           {
-            "nombre": "Xiaomi Poco",
+            "nombre": "Xiaomi Poco x4 pro",
             "precios": {
               "64": 800,
               "128": 900
@@ -84,7 +84,7 @@
             "parrafo": "El Xiaomi Poco X5 Pro 5G es un smartphone Android con una pantalla AMOLED de 6.67 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciado por un procesador Snapdragon 778G, el Poco X5 Pro cuenta con hasta 8GB de RAM y hasta 256GB de almacenamiento interno expandible."
           },
           {
-            "nombre": "Xiaomi Poco",
+            "nombre": "Xiaomi Poco x4",
             "precios": {
               "64": 800,
               "128": 900
@@ -93,7 +93,7 @@
             "parrafo": "El Xiaomi Poco X5 Pro 5G es un smartphone Android con una pantalla AMOLED de 6.67 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciado por un procesador Snapdragon 778G, el Poco X5 Pro cuenta con hasta 8GB de RAM y hasta 256GB de almacenamiento interno expandible."
           },
           {
-            "nombre": "Xiaomi Redmi Note 9",
+            "nombre": "Xiaomi Note 9",
             "precios": {
               "64": 500,
               "128": 600
