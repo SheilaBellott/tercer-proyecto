@@ -124,7 +124,15 @@ function mostrarProductos(productosAMostrar, div) {
               showConfirmButton: false,
               timer: 1500,
             });
-          }
+          }else {
+      Swal.fire({
+        icon: "warning",
+        title: "¡Límite alcanzado!",
+        text: "Ya has agregado el máximo de productos permitidos en el carrito.",
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "Entendido",
+      });
+    }
         }
       });
     });
