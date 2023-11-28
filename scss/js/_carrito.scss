@@ -55,7 +55,7 @@
   position: relative;
   left: 100%;
   bottom: 19px;
-  &:hover{
+  &:hover {
     color: $color-principal;
   }
 }
@@ -110,7 +110,6 @@ div:where(.swal2-icon).swal2-success .swal2-success-ring {
 div:where(.swal2-icon).swal2-success {
   border-color: $color-principal !important;
 }
-div:where(.swal2-icon).swal2-success [class^=swal2-success-line] {
+div:where(.swal2-icon).swal2-success [class^="swal2-success-line"] {
   background-color: $color-principal !important;
 }
-

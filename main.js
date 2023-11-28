@@ -143,6 +143,9 @@ form.addEventListener("submit", async function (e) {
 
   
   const contenedorResultados = document.getElementById('target');
+const contenedorMain = document.getElementById('mainContent');
+
+  contenedorMain.style.display = 'none'; // Oculta el contenido del main al realizar la búsqueda
 
 
   contenedorResultados.innerHTML = '';
