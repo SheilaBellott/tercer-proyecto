@@ -20,9 +20,7 @@ async function cargarProductos() {
       if (categoriaEncontrada) {
         const productosMostrados = categoriaEncontrada.productos;
         mostrarProductos(productosMostrados, divCategoria); 
-      } else {
-        divCategoria.innerHTML = `<p>No se encontraron productos en la categoría ${categoria}</p>`;
-      }
+      } 
     });
   } catch (error) {
     console.error('Error al cargar los productos:', error);
