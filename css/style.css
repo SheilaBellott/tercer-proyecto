@@ -293,7 +293,7 @@ main .tarjeta {
   .carrito-contenedor .title-carrito {
     font-size: 1.1rem; }
   .carrito-contenedor .carrito-p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin: 0; }
 
 .eliminar-producto {
@@ -325,7 +325,7 @@ div:where(.swal2-icon).swal2-success .swal2-success-ring {
 div:where(.swal2-icon).swal2-success {
   border-color: #d20000 !important; }
 
-div:where(.swal2-icon).swal2-success [class^=swal2-success-line] {
+div:where(.swal2-icon).swal2-success [class^="swal2-success-line"] {
   background-color: #d20000 !important; }
 
 body {
