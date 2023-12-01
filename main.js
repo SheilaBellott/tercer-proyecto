@@ -157,7 +157,7 @@ form.addEventListener("submit", async function (e) {
   contenedorResultados.innerHTML = "";
 
   try {
-    const response = await fetch("../productos.json");
+    const response = await fetch("productos.json");
     const categorias = await response.json();
 
     const productosFiltrados = categorias.reduce((result, categoria) => {
