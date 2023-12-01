@@ -1,180 +1,152 @@
 [
-    {
-      "categoria": "iphone",
-      "productos": [
-        {
-          "nombre": "iPhone 11",
-          "precios": {
-            "64": 1000,
-            "128": 1100
-          },
-          "src": "../iphone-img/iphone-11.png",
-          "parrafo": "El Apple iPhone 11 es el iPhone más grande y poderoso de la serie 14. Potenciado por el nuevo procesador Apple A16 Bionic, el iPhone 14 Pro Max cuenta con una pantalla OLED LTPO de 6.7 pulgadas con soporte always-on y un nuevo notch en forma de píldora que se integra a iOS con las notificaciones." 
-          
+  {
+    "categoria": "iphone",
+    "productos": [
+      {
+        "nombre": "iPhone 11",
+        "precios": {
+          "64": 1000,
+          "128": 1100
         },
-        {
-            "nombre": "iPhone 12",
-            "precios": {
-              "64": 1000,
-              "128": 1100
-            },
-            "src": "../iphone-img/iphone-12.png",
-            "parrafo": "El Apple iPhone 12 es el iPhone más grande y poderoso de la serie 14. Potenciado por el nuevo procesador Apple A16 Bionic, el iPhone 14 Pro Max cuenta con una pantalla OLED LTPO de 6.7 pulgadas con soporte always-on y un nuevo notch en forma de píldora que se integra a iOS con las notificaciones." 
-            
-          },
-          {
-            "nombre": "iPhone 13",
-            "precios": {
-              "64": 1000,
-              "128": 1100
-            },
-            "src": "../iphone-img/iphone-13.png",
-            "parrafo": "El Apple iPhone 13 es el iPhone más grande y poderoso de la serie 14. Potenciado por el nuevo procesador Apple A16 Bionic, el iPhone 14 Pro Max cuenta con una pantalla OLED LTPO de 6.7 pulgadas con soporte always-on y un nuevo notch en forma de píldora que se integra a iOS con las notificaciones." 
-            
-          },
-          {
-            "nombre": "iPhone 13 Pro Max",
-            "precios": {
-              "64": 1000,
-              "128": 1100
-            },
-            "src": "../iphone-img/iphone-13promax.png",
-            "parrafo": "El Apple iPhone 13 Pro Max es el iPhone más grande y poderoso de la serie 14. Potenciado por el nuevo procesador Apple A16 Bionic, el iPhone 14 Pro Max cuenta con una pantalla OLED LTPO de 6.7 pulgadas con soporte always-on y un nuevo notch en forma de píldora que se integra a iOS con las notificaciones." 
-            
-          },
-        {
-          "nombre": "iPhone 14 Pro Max",
-          "precios": {
-            "64": 1200,
-            "128": 1300
-          },
-          "src": "../iphone-img/iphone-14promax.png",
-          "parrafo": "El Apple iPhone 14 Pro Max es el iPhone más grande y poderoso de la serie 14. Potenciado por el nuevo procesador Apple A16 Bionic, el iPhone 14 Pro Max cuenta con una pantalla OLED LTPO de 6.7 pulgadas con soporte always-on y un nuevo notch en forma de píldora que se integra a iOS con las notificaciones."
-        }
-      ]
-    },
-    {
-        "categoria": "xiaomi",
-        "productos": [
-          {
-            "nombre": "Xiaomi Redmi 9",
-            "precios": {
-              "64": 800,
-              "128": 900
-            },
-            "src": "../xiaomi-img/xiaomipoco.png",
-            "parrafo": "El Xiaomi Poco es un smartphone Android con una pantalla AMOLED de 6.67 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciado por un procesador Snapdragon 778G, el Poco X5 Pro cuenta con hasta 8GB de RAM y hasta 256GB de almacenamiento interno expandible."
-          },
-          {
-            "nombre": "Xiaomi Note 10",
-            "precios": {
-              "64": 800,
-              "128": 900
-            },
-            "src": "../xiaomi-img/xiaomi2.png",
-            "parrafo": "El Xiaomi Poco X5 Pro 5G es un smartphone Android con una pantalla AMOLED de 6.67 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciado por un procesador Snapdragon 778G, el Poco X5 Pro cuenta con hasta 8GB de RAM y hasta 256GB de almacenamiento interno expandible."
-          },
-          {
-            "nombre": "Xiaomi Poco x4 pro",
-            "precios": {
-              "64": 800,
-              "128": 900
-            },
-            "src": "../xiaomi-img/xiaomi3.png",
-            "parrafo": "El Xiaomi Poco X5 Pro 5G es un smartphone Android con una pantalla AMOLED de 6.67 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciado por un procesador Snapdragon 778G, el Poco X5 Pro cuenta con hasta 8GB de RAM y hasta 256GB de almacenamiento interno expandible."
-          },
-          {
-            "nombre": "Xiaomi Poco x4",
-            "precios": {
-              "64": 800,
-              "128": 900
-            },
-            "src": "../xiaomi-img/xiaomi4.png",
-            "parrafo": "El Xiaomi Poco X5 Pro 5G es un smartphone Android con una pantalla AMOLED de 6.67 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciado por un procesador Snapdragon 778G, el Poco X5 Pro cuenta con hasta 8GB de RAM y hasta 256GB de almacenamiento interno expandible."
-          },
-          {
-            "nombre": "Xiaomi Note 9",
-            "precios": {
-              "64": 500,
-              "128": 600
-            },
-            "src": "../xiaomi-img/xiaomi5.png",
-            "parrafo": "El Xiaomi es un smartphone Android con una pantalla AMOLED de 6.67 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciado por un procesador Snapdragon 778G, el Poco X5 Pro cuenta con hasta 8GB de RAM y hasta 256GB de almacenamiento interno expandible."
-          }
-        ]
-    },
-    {
-      "categoria": "samsung",
-      "productos": [
-        {
-          "nombre": "Samsung S21",
-          "precios": {
-            "64": 900,
-            "128": 1000
-          },
-          "src": "../samsung-img/samsungs21.png",
-          "parrafo": "El Samsung Galaxy S21 llega este año con un Snapdragon 8 Gen 1 para USA o un Exynos 2200 para el resto del mundo. El Galaxy S23 FE cuenta con una pantalla AMOLED de 6.4 pulgadas a resolución FHD+ y tasa de refresco de 120Hz."
+        "src": "../iphone-img/iphone-11.png",
+        "parrafo": "El Apple iPhone 11 es el iPhone más grande y poderoso de la serie 14. Potenciado por el nuevo procesador Apple A16 Bionic, el iPhone 14 Pro Max cuenta con una pantalla OLED LTPO de 6.7 pulgadas con soporte always-on y un nuevo notch en forma de píldora que se integra a iOS con las notificaciones."
+      },
+      {
+        "nombre": "iPhone 12",
+        "precios": {
+          "64": 1000,
+          "128": 1100
         },
-        {
-            "nombre": "Samsung S22",
-            "precios": {
-              "64": 900,
-              "128": 1000
-            },
-            "src": "../samsung-img/samsungs22.png",
-            "parrafo": "El Samsung Galaxy S22 llega este año con un Snapdragon 8 Gen 1 para USA o un Exynos 2200 para el resto del mundo. El Galaxy S23 FE cuenta con una pantalla AMOLED de 6.4 pulgadas a resolución FHD+ y tasa de refresco de 120Hz."
-          },
-          {
-            "nombre": "Samsung Galaxy S23",
-            "precios": {
-              "64": 900,
-              "128": 1000
-            },
-            "src": "../samsung-img/samsungs23.png",
-            "parrafo": "El Samsung Galaxy S23 llega este año con un Snapdragon 8 Gen 1 para USA o un Exynos 2200 para el resto del mundo. El Galaxy S23 FE cuenta con una pantalla AMOLED de 6.4 pulgadas a resolución FHD+ y tasa de refresco de 120Hz."
-          },
-          {
-            "nombre": "Samsung Z Fold",
-            "precios": {
-              "64": 900,
-              "128": 1000
-            },
-            "src": "../samsung-img/samsungzfold.png",
-            "parrafo": "El Samsung Z Fold llega este año con un Snapdragon 8 Gen 1 para USA o un Exynos 2200 para el resto del mundo. El Galaxy S23 FE cuenta con una pantalla AMOLED de 6.4 pulgadas a resolución FHD+ y tasa de refresco de 120Hz."
-          },
-        {
-          "nombre": "Samsung Flip Z",
-          "precios": {
-            "64": 1100,
-            "128": 1200
-          },
-          "src": "../samsung-img/samsungflipz.png",
-          "parrafo": "El Samsung Flip Z llega este año con un Snapdragon 8 Gen 1 para USA o un Exynos 2200 para el resto del mundo. El Galaxy S23 FE cuenta con una pantalla AMOLED de 6.4 pulgadas a resolución FHD+ y tasa de refresco de 120Hz."
-        }
-      ]
-    }
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-  ]
-  
+        "src": "../iphone-img/iphone-12.png",
+        "parrafo": "El Apple iPhone 12 es el iPhone más grande y poderoso de la serie 14. Potenciado por el nuevo procesador Apple A16 Bionic, el iPhone 14 Pro Max cuenta con una pantalla OLED LTPO de 6.7 pulgadas con soporte always-on y un nuevo notch en forma de píldora que se integra a iOS con las notificaciones."
+      },
+      {
+        "nombre": "iPhone 13",
+        "precios": {
+          "64": 1000,
+          "128": 1100
+        },
+        "src": "../iphone-img/iphone-13.png",
+        "parrafo": "El Apple iPhone 13 es el iPhone más grande y poderoso de la serie 14. Potenciado por el nuevo procesador Apple A16 Bionic, el iPhone 14 Pro Max cuenta con una pantalla OLED LTPO de 6.7 pulgadas con soporte always-on y un nuevo notch en forma de píldora que se integra a iOS con las notificaciones."
+      },
+      {
+        "nombre": "iPhone 13 Pro Max",
+        "precios": {
+          "64": 1000,
+          "128": 1100
+        },
+        "src": "../iphone-img/iphone-13promax.png",
+        "parrafo": "El Apple iPhone 13 Pro Max es el iPhone más grande y poderoso de la serie 14. Potenciado por el nuevo procesador Apple A16 Bionic, el iPhone 14 Pro Max cuenta con una pantalla OLED LTPO de 6.7 pulgadas con soporte always-on y un nuevo notch en forma de píldora que se integra a iOS con las notificaciones."
+      },
+      {
+        "nombre": "iPhone 14 Pro Max",
+        "precios": {
+          "64": 1200,
+          "128": 1300
+        },
+        "src": "../iphone-img/iphone-14promax.png",
+        "parrafo": "El Apple iPhone 14 Pro Max es el iPhone más grande y poderoso de la serie 14. Potenciado por el nuevo procesador Apple A16 Bionic, el iPhone 14 Pro Max cuenta con una pantalla OLED LTPO de 6.7 pulgadas con soporte always-on y un nuevo notch en forma de píldora que se integra a iOS con las notificaciones."
+      }
+    ]
+  },
+  {
+    "categoria": "xiaomi",
+    "productos": [
+      {
+        "nombre": "Xiaomi Redmi 9",
+        "precios": {
+          "64": 800,
+          "128": 900
+        },
+        "src": "../xiaomi-img/xiaomipoco.png",
+        "parrafo": "El Xiaomi Poco es un smartphone Android con una pantalla AMOLED de 6.67 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciado por un procesador Snapdragon 778G, el Poco X5 Pro cuenta con hasta 8GB de RAM y hasta 256GB de almacenamiento interno expandible."
+      },
+      {
+        "nombre": "Xiaomi Note 10",
+        "precios": {
+          "64": 800,
+          "128": 900
+        },
+        "src": "../xiaomi-img/xiaomi2.png",
+        "parrafo": "El Xiaomi Poco X5 Pro 5G es un smartphone Android con una pantalla AMOLED de 6.67 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciado por un procesador Snapdragon 778G, el Poco X5 Pro cuenta con hasta 8GB de RAM y hasta 256GB de almacenamiento interno expandible."
+      },
+      {
+        "nombre": "Xiaomi Poco x4 pro",
+        "precios": {
+          "64": 800,
+          "128": 900
+        },
+        "src": "../xiaomi-img/xiaomi3.png",
+        "parrafo": "El Xiaomi Poco X5 Pro 5G es un smartphone Android con una pantalla AMOLED de 6.67 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciado por un procesador Snapdragon 778G, el Poco X5 Pro cuenta con hasta 8GB de RAM y hasta 256GB de almacenamiento interno expandible."
+      },
+      {
+        "nombre": "Xiaomi Poco x4",
+        "precios": {
+          "64": 800,
+          "128": 900
+        },
+        "src": "../xiaomi-img/xiaomi4.png",
+        "parrafo": "El Xiaomi Poco X5 Pro 5G es un smartphone Android con una pantalla AMOLED de 6.67 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciado por un procesador Snapdragon 778G, el Poco X5 Pro cuenta con hasta 8GB de RAM y hasta 256GB de almacenamiento interno expandible."
+      },
+      {
+        "nombre": "Xiaomi Note 9",
+        "precios": {
+          "64": 500,
+          "128": 600
+        },
+        "src": "../xiaomi-img/xiaomi5.png",
+        "parrafo": "El Xiaomi es un smartphone Android con una pantalla AMOLED de 6.67 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciado por un procesador Snapdragon 778G, el Poco X5 Pro cuenta con hasta 8GB de RAM y hasta 256GB de almacenamiento interno expandible."
+      }
+    ]
+  },
+  {
+    "categoria": "samsung",
+    "productos": [
+      {
+        "nombre": "Samsung S21",
+        "precios": {
+          "64": 900,
+          "128": 1000
+        },
+        "src": "../samsung-img/samsungs21.png",
+        "parrafo": "El Samsung Galaxy S21 llega este año con un Snapdragon 8 Gen 1 para USA o un Exynos 2200 para el resto del mundo. El Galaxy S23 FE cuenta con una pantalla AMOLED de 6.4 pulgadas a resolución FHD+ y tasa de refresco de 120Hz."
+      },
+      {
+        "nombre": "Samsung S22",
+        "precios": {
+          "64": 900,
+          "128": 1000
+        },
+        "src": "../samsung-img/samsungs22.png",
+        "parrafo": "El Samsung Galaxy S22 llega este año con un Snapdragon 8 Gen 1 para USA o un Exynos 2200 para el resto del mundo. El Galaxy S23 FE cuenta con una pantalla AMOLED de 6.4 pulgadas a resolución FHD+ y tasa de refresco de 120Hz."
+      },
+      {
+        "nombre": "Samsung Galaxy S23",
+        "precios": {
+          "64": 900,
+          "128": 1000
+        },
+        "src": "../samsung-img/samsungs23.png",
+        "parrafo": "El Samsung Galaxy S23 llega este año con un Snapdragon 8 Gen 1 para USA o un Exynos 2200 para el resto del mundo. El Galaxy S23 FE cuenta con una pantalla AMOLED de 6.4 pulgadas a resolución FHD+ y tasa de refresco de 120Hz."
+      },
+      {
+        "nombre": "Samsung Z Fold",
+        "precios": {
+          "64": 900,
+          "128": 1000
+        },
+        "src": "../samsung-img/samsungzfold.png",
+        "parrafo": "El Samsung Z Fold llega este año con un Snapdragon 8 Gen 1 para USA o un Exynos 2200 para el resto del mundo. El Galaxy S23 FE cuenta con una pantalla AMOLED de 6.4 pulgadas a resolución FHD+ y tasa de refresco de 120Hz."
+      },
+      {
+        "nombre": "Samsung Flip Z",
+        "precios": {
+          "64": 1100,
+          "128": 1200
+        },
+        "src": "../samsung-img/samsungflipz.png",
+        "parrafo": "El Samsung Flip Z llega este año con un Snapdragon 8 Gen 1 para USA o un Exynos 2200 para el resto del mundo. El Galaxy S23 FE cuenta con una pantalla AMOLED de 6.4 pulgadas a resolución FHD+ y tasa de refresco de 120Hz."
+      }
+    ]
+  }
+]

@@ -4,38 +4,42 @@ const productPopup = document.querySelector(".product-popup");
 const productPopupContent = document.querySelector(".product-popup-content");
 const cartButton = document.getElementById("cart-button");
 
-let productos = []; 
+let productos = [];
 
 async function cargarProductos() {
   try {
-    const response = await fetch('../productos.json');
+    const response = await fetch("../productos.json");
     const categorias = await response.json();
 
-    const divsCategorias = document.querySelectorAll('.categoria');
+    const divsCategorias = document.querySelectorAll(".categoria");
 
     divsCategorias.forEach(async (divCategoria) => {
       const categoria = divCategoria.dataset.categoria;
-      const categoriaEncontrada = categorias.find(item => item.categoria === categoria);
+      const categoriaEncontrada = categorias.find(
+        (item) => item.categoria === categoria
+      );
 
       if (categoriaEncontrada) {
         const productosMostrados = categoriaEncontrada.productos;
-        mostrarProductos(productosMostrados, divCategoria); 
-      } 
+        mostrarProductos(productosMostrados, divCategoria);
+      }
     });
   } catch (error) {
-    console.error('Error al cargar los productos:', error);
+    console.error("Error al cargar los productos:", error);
   }
 }
 
-
 function mostrarProductosPorCategoria(categoria, divId) {
-  const productosCategoria = productos.find(item => item.categoria === categoria);
+  const productosCategoria = productos.find(
+    (item) => item.categoria === categoria
+  );
 
   if (productosCategoria) {
     const productosMostrados = productosCategoria.productos;
     mostrarProductos(productosMostrados, divId);
   } else {
-    document.getElementById(divId).innerHTML = '<p>No se encontraron productos en esta categoría</p>';
+    document.getElementById(divId).innerHTML =
+      "<p>No se encontraron productos en esta categoría</p>";
   }
 }
 
@@ -72,8 +76,12 @@ function mostrarProductos(productosAMostrar, div) {
       `;
       div.appendChild(productoElement);
 
-      const botonesMemoria = productoElement.querySelectorAll(".memorias .memoria-btn");
-      const precioMostrado = productoElement.querySelector(".bottom-precio-comprar p");
+      const botonesMemoria = productoElement.querySelectorAll(
+        ".memorias .memoria-btn"
+      );
+      const precioMostrado = productoElement.querySelector(
+        ".bottom-precio-comprar p"
+      );
 
       botonesMemoria.forEach((memoriaBtn) => {
         memoriaBtn.addEventListener("click", () => {
@@ -122,15 +130,15 @@ function mostrarProductos(productosAMostrar, div) {
               showConfirmButton: false,
               timer: 1500,
             });
-          }else {
-      Swal.fire({
-        icon: "warning",
-        title: "¡Límite alcanzado!",
-        text: "Ya has agregado el máximo de productos permitidos en el carrito.",
-        confirmButtonColor: "#3085d6",
-        confirmButtonText: "Entendido",
-      });
-    }
+          } else {
+            Swal.fire({
+              icon: "warning",
+              title: "¡Límite alcanzado!",
+              text: "Ya has agregado el máximo de productos permitidos en el carrito.",
+              confirmButtonColor: "#3085d6",
+              confirmButtonText: "Entendido",
+            });
+          }
         }
       });
     });
@@ -141,17 +149,15 @@ form.addEventListener("submit", async function (e) {
   e.preventDefault();
   const nombre = nombreProductoInput.value.toLowerCase();
 
-  
-  const contenedorResultados = document.getElementById('target');
-const contenedorMain = document.getElementById('mainContent');
+  const contenedorResultados = document.getElementById("target");
+  const contenedorMain = document.getElementById("mainContent");
 
-  contenedorMain.style.display = 'none'; // Oculta el contenido del main al realizar la búsqueda
+  contenedorMain.style.display = "none"; // Oculta el contenido del main al realizar la búsqueda
 
-
-  contenedorResultados.innerHTML = '';
+  contenedorResultados.innerHTML = "";
 
   try {
-    const response = await fetch('../productos.json');
+    const response = await fetch("../productos.json");
     const categorias = await response.json();
 
     const productosFiltrados = categorias.reduce((result, categoria) => {
@@ -165,7 +171,7 @@ const contenedorMain = document.getElementById('mainContent');
     }, []);
 
     if (productosFiltrados.length === 0 && nombre.length > 0) {
-      // Si no se encontraron productos pero se ingresó un término de búsqueda, buscar coincidencias 
+      // Si no se encontraron productos pero se ingresó un término de búsqueda, buscar coincidencias
       const productosCoincidentes = categorias.reduce((result, categoria) => {
         const productosCategoria = categoria.productos.filter((item) =>
           item.nombre.toLowerCase().includes(nombre[0])
@@ -183,17 +189,9 @@ const contenedorMain = document.getElementById('mainContent');
       mostrarProductos(productosFiltrados, contenedorResultados);
     }
   } catch (error) {
-    console.error('Error al cargar los productos:', error);
+    console.error("Error al cargar los productos:", error);
   }
 });
-
-
-
-
-
-
-
-
 
 cartButton.addEventListener("click", () => {
   mostrarProductosSeleccionadosEnVentanaEmergente();
@@ -250,6 +248,5 @@ function eliminarProductoSeleccionado(index) {
     JSON.stringify(productosSeleccionados)
   );
 }
-
 
 cargarProductos();
